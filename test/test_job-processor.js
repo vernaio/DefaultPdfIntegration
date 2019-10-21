@@ -18,7 +18,7 @@ describe("Process job object.", function () {
             files: [
                 pdfPath
             ],
-            storageDir: "/data/storage/job-42/",
+            storageFolder: "job-42/",
             amount: 2500,
             label: "Perfect Pattern Flyer"
         };
@@ -41,9 +41,9 @@ describe("Process job object.", function () {
             expect(bs.trimFormat.height).to.equal(297000);
 
             expect(bs.printData.frontPage.pdfPageNumber).to.equal("1");
-            expect(bs.printData.frontPage.pdfUrl).to.equal("/data/storage/job-42/job-42_2500_Perfect Pattern Flyer.pdf");
+            expect(bs.printData.frontPage.pdfUrl).to.equal("job-42/job-42_2500_Perfect Pattern Flyer.pdf");
             expect(bs.printData.backPage.pdfPageNumber).to.equal("2");
-            expect(bs.printData.backPage.pdfUrl).to.equal("/data/storage/job-42/job-42_2500_Perfect Pattern Flyer.pdf");
+            expect(bs.printData.backPage.pdfUrl).to.equal("job-42/job-42_2500_Perfect Pattern Flyer.pdf");
 
             done();
         });

@@ -48,11 +48,11 @@ async function generateFlatProduct(job) {
 
     bs.printData.frontPage = {}
     bs.printData.frontPage.pdfPageNumber = "1";
-    bs.printData.frontPage.pdfUrl = path.join(job.storageDir, path.basename(job.files[0]));
+    bs.printData.frontPage.pdfUrl = path.join(job.storageFolder, path.basename(job.files[0]));
 
     bs.printData.backPage = {}
     bs.printData.backPage.pdfPageNumber = "2";
-    bs.printData.backPage.pdfUrl = path.join(job.storageDir, path.basename(job.files[0]));
+    bs.printData.backPage.pdfUrl = path.join(job.storageFolder, path.basename(job.files[0]));
 
     // return bindery signature
     return bs;
