@@ -10,6 +10,10 @@ module.exports = {
    * Returns version details about this flow logic implementation.
    */
   "getVersion": version.getVersion,
+
+  /**
+   * Extracts complete jobs from the input folder.
+   */
   "extractJobs": jobExtractor.extractJobs,
   "processJob" : jobProcessor.processJob,
   "processJobBinderySignatures" : jobBsProcessor.processJobBinderySignatures,
