@@ -1,9 +1,6 @@
 
-exports.processJobBinderySignatures = function(binderySignatures, job, callback) {
-    
-    var result = null;
-
-
-    // return
-    callback(result);
+exports.processJobBinderySignatures = function(binderySignatures, job) {
+    return new Promise((resolve, reject) => {
+        resolve(binderySignatures);
+    });
 }

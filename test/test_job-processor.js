@@ -18,19 +18,20 @@ describe("Process job object.", function () {
             files: [
                 pdfPath
             ],
+            storageDir: "/data/storage/job-42/",
             amount: 2500,
             label: "Perfect Pattern Flyer"
         };
 
         // act
-        main.processJob(job, function (bss, at) {
-            expect(bss.length).to.equal(1);
+        main.processJob(job).then(({binderySignatures, assemblerTask}) => {
+            expect(binderySignatures.length).to.equal(1);
 
-            var bs = bss[0];
+            var bs = binderySignatures[0];
             console.log(JSON.stringify(bs, null, 4));
 
             // assert
-            expect(at).to.null;
+            expect(assemblerTask).to.null;
 
             expect(bs.id).to.equal("job-42");
             expect(bs.label).to.equal("Perfect Pattern Flyer");
@@ -40,10 +41,10 @@ describe("Process job object.", function () {
             expect(bs.trimFormat.height).to.equal(297000);
 
             expect(bs.printData.frontPage.pdfPageNumber).to.equal("1");
-            expect(bs.printData.frontPage.pdfUrl).to.equal("do hoid...");
+            expect(bs.printData.frontPage.pdfUrl).to.equal("/data/storage/job-42/job-42_2500_Perfect Pattern Flyer.pdf");
             expect(bs.printData.backPage.pdfPageNumber).to.equal("2");
-            expect(bs.printData.backPage.pdfUrl).to.equal("do hoid...");
-         
+            expect(bs.printData.backPage.pdfUrl).to.equal("/data/storage/job-42/job-42_2500_Perfect Pattern Flyer.pdf");
+
             done();
         });
     });

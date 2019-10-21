@@ -15,7 +15,16 @@ module.exports = {
    * Extracts complete jobs from the input folder.
    */
   "extractJobs": jobExtractor.extractJobs,
+
+  /**
+   * Process a extracted job object.
+   */
   "processJob" : jobProcessor.processJob,
+
+  /**
+   * Post processor of BinderySignatures - just before upload to sSprintOne.
+   */
   "processJobBinderySignatures" : jobBsProcessor.processJobBinderySignatures,
+  
   "processSheet" : sheetProcessor.processSheet
 };  
