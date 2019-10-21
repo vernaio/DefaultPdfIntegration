@@ -1,4 +1,3 @@
-const modifier = require('./modifier.js');
 
 exports.processJobBinderySignatures = function(binderySignatures, job, callback) {
     
