@@ -45,4 +45,22 @@ describe("Sheet Processor", function () {
                 done();
             });
     });
+
+
+    it("Generate Sheet ID.", function (done) {
+
+        // arrange
+        var event = {};
+
+        event.id = "abcdefghi";
+        event.label = "123456789"
+
+        // act
+        main.generateSheetId(event)
+            .then((sheetId) => {
+                expect(sheetId).to.equal("56789-ABCD");
+                done();
+            });
+
+    });
 });

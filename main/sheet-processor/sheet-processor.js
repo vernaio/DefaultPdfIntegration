@@ -29,5 +29,5 @@ exports.generateSheetId = function(event) {
         // generate sheet id
         resolve(label.substring(4, label.length) + "-" + id.substring(0, 4).toUpperCase());
 
-    }
+    });
 }
