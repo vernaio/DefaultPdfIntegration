@@ -27,6 +27,11 @@ module.exports = {
   "processJobBinderySignatures" : jobBsProcessor.processJobBinderySignatures,
   
   /**
+   * Generation of the sheet's id.
+   */
+  "generateSheetId" : sheetProcessor.generateSheetId,
+
+  /**
    * Post processor for the generated sheet files.
    */
   "processSheet" : sheetProcessor.processSheet
