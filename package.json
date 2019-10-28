@@ -1,6 +1,6 @@
 {
-    "name": "default-flow-logic",
-    "version": "1.0.4",
+    "name": "default-pdf-integration",
+    "version": "1.0.0",
     "description": "",
     "main": "index.js",
     "scripts": {
@@ -8,14 +8,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/perfectpattern/DefaultFlowLogic.git"
+        "url": "git+https://github.com/perfectpattern/DefaultPdfIntegration.git"
     },
     "author": "PerfectPattern GmbH",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/perfectpattern/DefaultFlowLogic/issues"
+        "url": "https://github.com/perfectpattern/DefaultPdfIntegration/issues"
     },
-    "homepage": "https://github.com/perfectpattern/DefaultFlowLogic#readme",
+    "homepage": "https://github.com/perfectpattern/DefaultPdfIntegration#readme",
     "dependencies": {
         "pdf-lib": "^1.2.1",
         "unzipper": "^0.10.5"
