@@ -38,10 +38,22 @@ async function generateFlatProduct(job) {
 
     // trim format
     var trimBox = pdfPage.node.TrimBox();
+    var mediaBox = pdfPage.node.MediaBox();
+
+    if(trimBox == undefined) {
+        trimBox = mediaBox;
+    }
 
     bs.trimFormat = {};
     bs.trimFormat.width = dtp2micro(trimBox.get(2) - trimBox.get(0));
     bs.trimFormat.height = dtp2micro(trimBox.get(3) - trimBox.get(1));
+
+    // bleed
+    bs.bleed = {};
+    bs.bleed.left = dtp2micro(trimBox.get(0));
+    bs.bleed.bottom = dtp2micro(trimBox.get(1));
+    bs.bleed.right = dtp2micro(mediaBox.get(2) - trimBox.get(2));
+    bs.bleed.top = dtp2micro(mediaBox.get(3) - trimBox.get(3));
 
     // print data
     bs.printData = {};
@@ -50,9 +62,11 @@ async function generateFlatProduct(job) {
     bs.printData.frontPage.pdfPageNumber = "1";
     bs.printData.frontPage.pdfUrl = path.join(job.storageFolder, path.basename(job.files[0]));
 
-    bs.printData.backPage = {}
-    bs.printData.backPage.pdfPageNumber = "2";
-    bs.printData.backPage.pdfUrl = path.join(job.storageFolder, path.basename(job.files[0]));
+    if(pdf.getPages().length > 1) {
+        bs.printData.backPage = {}
+        bs.printData.backPage.pdfPageNumber = "2";
+        bs.printData.backPage.pdfUrl = path.join(job.storageFolder, path.basename(job.files[0]));
+    }
 
     // return bindery signature
     return bs;
