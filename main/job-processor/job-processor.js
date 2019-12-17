@@ -5,7 +5,7 @@ const path = require('path');
 /**
  * This implementation only supports 2sided products.
  */
-exports.processJob = function (job) {
+exports.processJob = function (job, mediaList) {
     return new Promise((resolve, reject) => {
 
         // generate bindery signature
