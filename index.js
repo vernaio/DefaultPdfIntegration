@@ -3,6 +3,7 @@ var jobExtractor = require('./main/job-extractor/job-extractor');
 var jobProcessor = require('./main/job-processor/job-processor');
 var jobBsProcessor = require('./main/job-bs-processor/job-bs-processor')
 var sheetProcessor = require('./main/sheet-processor/sheet-processor')
+var filesMover = require('./main/files-mover/files-mover')
 
 module.exports = {
 
@@ -34,5 +35,10 @@ module.exports = {
   /**
    * Post processor for the generated sheet files.
    */
-  "processSheet" : sheetProcessor.processSheet
+  "processSheet" : sheetProcessor.processSheet,
+  
+   /**
+   * Post processor for moving job related files
+   */
+  "moveFiles" : filesMover.moveFiles  
 };  
